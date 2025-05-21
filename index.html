@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Lojinha</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+  <div id="login-container" class="form-container">
+    <h2>Entrar na Lojinha</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="entrar()">Entrar</button>
+    <p>Não tem conta? <a href="#" onclick="toggleCadastro()">Cadastre-se</a></p>
+  </div>
+
+  <div id="cadastro-container" class="form-container" style="display:none;">
+    <h2>Criar Conta</h2>
+    <input type="email" id="cadastro-email" placeholder="Email">
+    <input type="password" id="cadastro-senha" placeholder="Senha">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <p>Já tem conta? <a href="#" onclick="toggleCadastro()">Entrar</a></p>
+  </div>
+
+  <div id="lojinha" style="display:none;">
+    <header>
+      <h1>Minha Lojinha</h1>
+      <button onclick="sair()" style="float:right;margin:10px;">Sair</button>
+    </header>
+    <main class="produtos-container" id="produtos"></main>
+    <aside class="carrinho" id="carrinho">
+      <h2>Carrinho</h2>
+      <ul id="itens-carrinho"></ul>
+      <p>Total: R$ <span id="total">0.00</span></p>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
